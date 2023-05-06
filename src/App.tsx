@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { PlaidLink } from "react-plaid-link";
+import logo from "./logo.svg";
+import styles from "./App.module.scss";
+import { callChatGPT } from "./Utils/gpt";
+import Card from "./Components/Card";
 
 function App() {
   const [token, setToken] = useState("");
@@ -20,21 +23,8 @@ function App() {
     asyncUseEffect();
   }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn About the Wonderful Life of Omar Abdelaziz****.
-        </a>
-
+    <div className={styles.done}>
+      Hiiii
         <PlaidLink
           token={token}
           clientName="EcoNomics"
@@ -46,7 +36,13 @@ function App() {
         >
           CLICK ME TO OPEN PLAID 😩
         </PlaidLink>
-      </header>
+      <Card
+        iconName="electricity"
+        name="Electricity"
+        cost={5}
+        footPrint={30}
+        avg={50}
+      />
     </div>
   );
 }
