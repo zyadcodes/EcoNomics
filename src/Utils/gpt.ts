@@ -1,29 +1,34 @@
-const fetchCompletion = async () => {
-  const OPENAI_API_KEY = "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";
+interface GPTParams {
+  content: string;
+}
+
+interface GPTResponse {
+  choices: {
+    message: {
+      content: string;
+    };
+  }[];
+}
+
+export const callChatGPT = async (params: GPTParams): Promise<string> => {
+  const OPENAI_API_KEY = "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";
   const apiUrl = "https://api.openai.com/v1/chat/completions";
 
-  const headers = new Headers();
-  headers.append("Content-Type", "application/json");
-  headers.append("Authorization", `Bearer ${OPENAI_API_KEY}`);
+  const response = await fetch(apiUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${OPENAI_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [{ role: "user", content: params.content }],
+    }),
+  });
 
-  const requestBody = {
-    model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: "Hello!" }],
-  };
+  const json = (await response.json()) as GPTResponse;
 
-  try {
-    const response = await fetch(apiUrl, {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(requestBody),
-    });
+  const message = json.choices[0].message.content;
 
-    const data = await response.json();
-
-    console.log(data);
-  } catch (error) {
-    console.error("Error fetching completion:", error);
-  }
+  return message;
 };
-
-export default fetchCompletion;
