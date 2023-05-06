@@ -1,0 +1,39 @@
+.background {
+  background: linear-gradient(#59744c, #56634f);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carousel {
+  margin-top: 10vh;
+}
+
+.emissionsCard {
+  height: 180px;
+  align-items: center;
+  align-self: center;
+  flex-direction: column;
+  background-color: #92b084;
+  border-radius: 20px;
+}
+
+.emissionsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 15px;
+}
+
+.leftSide {
+  width: 40%;
+}
+
+.emissionsText {
+  font-weight: 800;
+  color: white;
+  font-size: 18px;
+}
