@@ -1,5 +1,5 @@
 const fetchCompletion = async () => {
-  const OPENAI_API_KEY = "your_openai_api_key_here";
+  const OPENAI_API_KEY = "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";
   const apiUrl = "https://api.openai.com/v1/chat/completions";
 
   const headers = new Headers();
