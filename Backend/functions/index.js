@@ -13,7 +13,7 @@ exports.plaidInit = functions.https.onRequest(async (request, response) => {
     const token_return_json = await plaidInit();
     response.set('Access-Control-Allow-Origin', '*');
     response.json({...token_return_json});
-})
+});
 
 const plaidInit = async () => {
     const token_return = await fetch(
@@ -36,4 +36,31 @@ const plaidInit = async () => {
     );
     const token_return_json = await token_return.json();
     return token_return_json;
+};
+
+exports.getTips = functions.https.onRequest(async (request, response) => {
+    const token_return_json = await plaidInit();
+    response.set('Access-Control-Allow-Origin', '*');
+    response.json({...token_return_json});
+});
+
+export const callChatGPT = async (params) => {
+  const OPENAI_API_KEY = "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";
+  const apiUrl = "https://api.openai.com/v1/chat/completions";
+
+  const response = await fetch(apiUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${OPENAI_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [{ role: "user", content: params.content }],
+    }),
+  });
+
+  const json = (await response.json());
+  const message = json.choices[0].message.content;
+  return message;
 };
