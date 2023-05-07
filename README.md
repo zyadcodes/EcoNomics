@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+EcoNomics README
+1. Goals of the Project
+The primary goal of this project is to promote sustainability by connecting users' finances to an app that calculates their carbon footprint based on their spending habits. The app will also provide personalized recommendations on how to reduce their carbon footprint through AI-driven insights, using the OpenAI API.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2. Desired User Experience
+The user will connect their bank account to the app's interface, which will then extract information about their spending habits. Based on this data, the app will display the carbon emissions associated with various expenses such as gas station visits, shopping, electricity, and more.
 
-## Available Scripts
+The app will provide the following features:
 
-In the project directory, you can run:
+Display the total amount spent and compare it to the average.
+Show the carbon footprint emitted and compare it to the previous month.
+Present data through pop-ups, widgets, graphs, and charts with relevant information.
+Offer a visually appealing interface with complex gradients, formal chic style, and smooth animations.
+Generate AI-driven recommendations, using the OpenAI API, to suggest areas where the user can decrease their carbon footprint.
+3. Implementation Details
+To achieve these goals, we plan to:
 
-### `npm start`
+Integrate the Plaid API to securely connect and extract user's bank information.
+Implement a carbon footprint calculation model based on the user's spending data.
+Develop an AI-driven recommendation engine, utilizing the OpenAI API, to suggest ways to reduce the carbon footprint.
+Design a visually appealing and user-friendly interface with responsive components.
+Add modal windows for displaying graphs and charts with relevant data.
+Implement smooth animations for an engaging user experience.
+4. Issues Encountered, Bugs Fixed or Still Present, and Future Work to be Done
+During the development of the project, we have faced the following challenges:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Connecting Plaid API: We experienced difficulties in integrating the Plaid API to extract user's bank information securely. This issue has been resolved through extensive testing and collaboration with Plaid's support team.
+Modal Implementation: We encountered challenges in implementing the modal windows to display graphs and charts effectively. This issue has been partially resolved, but further improvements are required for a smoother user experience.
+Complex Styling: Designing the interface with complex gradients and formal chic style proved to be challenging. While we have achieved some of the desired design elements, additional work is needed to refine the overall look and feel of the app.
+Animation Functionality: Implementing smooth animations for an engaging user experience has been challenging. Some animations have been successfully implemented, but further work is needed to ensure consistent performance across all components.
+OpenAI API Integration: Integrating the OpenAI API to generate AI-driven recommendations has been successfully implemented, but ongoing improvements and refinements are necessary to provide more accurate and relevant suggestions.
+Moving forward, we plan to:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Improve the modal window implementation for a better user experience.
+Continue refining the interface design to achieve the desired formal chic style.
+Enhance the animation functionality for a smoother and more engaging experience.
+Expand the AI-driven recommendation engine, powered by the OpenAI API, to include more personalized and actionable suggestions for reducing carbon footprint.
+Continuously refine the OpenAI API integration to improve the accuracy and relevance of the generated recommendations.
